@@ -1,54 +1,58 @@
+<style src="../static/css/main.scss" lang="scss"></style>
+
 <template>
-  <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
-    </main>
-  </div>
+  <v-app id="inspire" dark>
+    <v-navigation-drawer v-model="drawer" absolute temporary app width="250">
+      <v-list dense>
+        <v-list-tile @click>
+          <v-list-tile-action>
+            <v-icon>dashboard</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Dashboard</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click>
+          <v-list-tile-action>
+            <v-icon>settings</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Settings</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar app fixed clipped-left>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title>
+        <v-img
+          :src="'../static/img/icons/android-chrome-72x72.png'"
+          contain
+          aspect-ratio="1"
+          width="25"
+          height="25"
+        ></v-img>
+      </v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <v-container fluid fill-height>
+        <v-layout justify-center align-center>
+          <v-flex shrink></v-flex>
+        </v-layout>
+      </v-container>
+    </v-content>
+    <v-footer app fixed></v-footer>
+  </v-app>
 </template>
 
 <script>
 export default {
-  name: "app"
+  name: "app",
+  data: () => ({
+    drawer: null
+  }),
+  props: {
+    source: String
+  }
 };
 </script>
-
-<style>
-body {
-  margin: 0;
-}
-
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-main {
-  text-align: center;
-  margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495e;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
-}
-</style>
