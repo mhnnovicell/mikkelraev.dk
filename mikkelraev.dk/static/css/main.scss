@@ -1,7 +1,11 @@
 // Then import vuetify-scss.
 @import '~vuetify-scss';
 
-$primary-bg: green;
+* {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+
+}
 
 html {
   color: #2c3e50;
