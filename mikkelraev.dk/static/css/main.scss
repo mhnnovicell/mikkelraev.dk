@@ -1,5 +1,8 @@
 // Then import vuetify-scss.
-@import '~vuetify-scss';
+
+.primary{
+  background-color: yellow !important;
+}
 
 * {
   font-family: 'Nunito', sans-serif;
@@ -10,7 +13,7 @@
 html {
   color: #2c3e50;
   margin: 0;
-
+overflow-y: auto;
 }
 
 main {
@@ -55,3 +58,19 @@ li {
 a {
   color: #35495e;
 }
+
+.text-on-back{
+position: relative;
+z-index: 1;
+font-size: 9.5em;
+margin-left: -4px;
+font-weight: 900;
+color: hsla(0,0%,100%,.2)!important;
+}
+
+.work-headline{
+  position: absolute;
+  top: 110px;
+  left: 60px;
+}
+@import '~vuetify-scss';
