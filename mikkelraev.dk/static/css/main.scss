@@ -1,8 +1,7 @@
 // Then import vuetify-scss.
+@import '~vuetify-scss';
 
-.primary{
-  background-color: yellow !important;
-}
+
 
 * {
   font-family: 'Nunito', sans-serif;
@@ -13,7 +12,7 @@
 html {
   color: #2c3e50;
   margin: 0;
-overflow-y: auto;
+  overflow-y: auto;
 }
 
 main {
@@ -59,18 +58,31 @@ a {
   color: #35495e;
 }
 
-.text-on-back{
-position: relative;
-z-index: 1;
-font-size: 9.5em;
-margin-left: -4px;
-font-weight: 900;
-color: hsla(0,0%,100%,.2)!important;
+.text-on-back {
+  position: relative;
+  z-index: 1;
+  font-size: 9.5em;
+  margin-left: -4px;
+  font-weight: 900;
+  color: hsla(0, 0%, 100%, .2) !important;
 }
 
-.work-headline{
+.work-headline {
   position: absolute;
   top: 110px;
   left: 60px;
 }
-@import '~vuetify-scss';
+
+.v-carousel__prev {
+  left: 118rem;
+  top: 90%;
+}
+
+.v-carousel__next {
+  top: 90%;
+}
+
+.custom-card {
+  right: 50%;
+  top: 150%;
+}
